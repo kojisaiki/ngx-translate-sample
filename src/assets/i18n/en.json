@@ -1,3 +1,6 @@
 {
-    "HELLO": "Yahoo {{value}} !!"
+    "HELLO": "Yahoo {{value}} !!",
+    "PARENT": {
+        "CHILD": "I am child !"
+    }
 }

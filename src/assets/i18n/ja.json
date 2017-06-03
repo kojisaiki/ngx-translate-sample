@@ -1,3 +1,6 @@
 {
-    "HELLO": "やほー {{value}} !!"
+    "HELLO": "やほー {{value}} !!",
+    "PARENT": {
+        "CHILD": "見た目は子供！"
+    }
 }
