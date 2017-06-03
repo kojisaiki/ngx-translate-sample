@@ -22,6 +22,11 @@
   <button (click)="useEn()">English</button>
   <button (click)="useJa()">日本語</button>
 </section>
+<section>
+  メッセージパラメータ：<input type="text" [ngModel]="world" (ngModelChange)="ngModelChange($event)">
+</section>
+
+<hr>
 <h2>Here are some links to help you start: </h2>
 <ul>
   <li>

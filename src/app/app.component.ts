@@ -12,7 +12,8 @@ export class AppComponent implements OnInit {
   private currLang: string;
 
   // メッセージに渡すパラメータ
-  param = { value: 'Japan' };
+  public world: string;
+  public param: any;
 
   constructor(private translate: TranslateService) {
     // この言語は現在の言語で翻訳が見つからない場合のフォールバックとして使用される
@@ -25,6 +26,15 @@ export class AppComponent implements OnInit {
     translate.use(this.currLang);
   }
 
+  ngOnInit() {
+    this.world = 'world';
+
+    this.param = {
+      // worldは値渡しされる模様
+      value: this.world
+    }
+  }
+
   useEn() {
     this.currLang = 'en';
     this.translate.use(this.currLang);
@@ -34,5 +44,12 @@ export class AppComponent implements OnInit {
     this.currLang = 'ja';
     this.translate.use(this.currLang);
   }
+
+  ngModelChange(event) {
+    this.world = event;
+    this.param.value = event;
+
+    // 現在、use以外にパラメータを更新する手段不明・・・
+    this.translate.use(this.currLang);
   }
 }
