@@ -9,17 +9,14 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   title = 'app';
 
-  param = { value: 'world' };
+  // メッセージに渡すパラメータ
+  param = { value: 'Japan' };
 
   constructor(translate: TranslateService) {
-    translate.setTranslation('en', {
-      HELLO: 'hello {{value}}'
-    });
-
-    // this language will be used as a fallback when a translation isn't found in the current language
+    // この言語は現在の言語で翻訳が見つからない場合のフォールバックとして使用されます
     translate.setDefaultLang('en');
 
-    // the lang to use, if the lang isn't available, it will use the current loader to get them
+    // 使用する言語です。指定された言語が使用できない場合、ローダによって処理される（ここではフォールバック先があるため、それが使用される）
     translate.use('en');
   }
 }
