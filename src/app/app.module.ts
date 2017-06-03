@@ -15,7 +15,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 /**
  * TranslateLoaderのファクトリ関数
- * @param http 
+ * @param http
  */
 export function createTranslateLoader(http: Http) {
   /**
